@@ -12,11 +12,5 @@ RUN pip install graphql-core==2.1
 RUN pip install graphql-relay==0.4.5
 RUN pip install sklearn==0.0
 
-RUN pyppeteer-install
-RUN ssh-keyscan -t rsa github.com > /root/.ssh/known_hosts
-RUN pip install -e git+git@github.com:allganize/allganize-utils.git@v0.1.14#egg=allganize
-RUN pip install -e git+https://github.com/mnpk/BERT-keras-minimal.git#egg=bertkeras
-
-
 WORKDIR /app
     

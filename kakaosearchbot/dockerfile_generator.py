@@ -12,12 +12,6 @@ RUN apt-get install -y git
             continue
         dockerfile['others'] += "RUN pip install {}\n".format(l)
     dockerfile['others'] += '''
-RUN pyppeteer-install
-RUN ssh-keyscan -t rsa github.com > /root/.ssh/known_hosts
-RUN pip install -e git+git@github.com:allganize/allganize-utils.git@v0.1.14#egg=allganize
-RUN pip install -e git+https://github.com/mnpk/BERT-keras-minimal.git#egg=bertkeras
-
-
 WORKDIR /app
     '''
     with open('Dockerfile', 'w') as file:
